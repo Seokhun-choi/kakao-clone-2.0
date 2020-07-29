@@ -37,3 +37,24 @@
   align-items: center;
   border-radius: 10px;
 }
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav {
+  transform: translateY(80px);
+  /* 위에꺼 왜 달아주었냐!! 이유는 밑에 딜레이 넣어줘서 0.25s동안은
+  디폴트값의 위치가 된다. 그래서 원하는 애니메이션이 안나온다. 
+  그래서 forwards(to{}의 값을 고정 시켜주는)를 주고 translateY(80px)
+  로 nav의 값을 내려준거! 쉽누  */
+  animation: fadeDown 0.5s ease-out forwards;
+  animation-delay: 0.25s;
+}
